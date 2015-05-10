@@ -191,11 +191,11 @@ class GoogleResultsAPI:
         results_a = self.get_results(a)
         results_b = self.get_results(b)
 
-        return {a: GoogleResults.calculate_score(results_a), b: GoogleResults.calculate_score(results_b)}, "Google Search"
+        return {a: GoogleResultsAPI.calculate_score(results_a), b: GoogleResultsAPI.calculate_score(results_b)}, "Google Search"
 
     @staticmethod
     def calculate_score(results):
-        return (results - GoogleResults.cats) / GoogleResults.cats + 1
+        return (results - GoogleResultsAPI.cats) / GoogleResultsAPI.cats + 1
 
     @staticmethod
     def get_results(item):
